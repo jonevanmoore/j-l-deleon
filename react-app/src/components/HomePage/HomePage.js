@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack"
-import oneself from "../HomePage/oneself.pdf"
+import oneself from "../HomePage/Moore, Jon Resume.pdf"
 
 
 const HomePage = () => {
