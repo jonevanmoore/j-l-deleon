@@ -5,12 +5,24 @@ import oneself from "../HomePage/oneself.pdf"
 
 const HomePage = () => {
 
-    const [numPage, setNumPages] = useState(null)
+    const [numPages, setNumPages] = useState(null)
     const [pageNumber, setPageNumber] = useState(1)
 
     function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPage);
+        setNumPages(numPages);
         setPageNumber(1)
+    }
+
+    function changePage(offSet) {
+        setPageNumber(prevPageNumber => prevPageNumber + offSet)
+    }
+
+    function changePageBack() {
+        changePage(-1)
+    }
+
+    function changePageNext() {
+        changePage(+1)
     }
 
     return (
@@ -21,6 +33,9 @@ const HomePage = () => {
                     <Document file={oneself} onLoadSuccess={onDocumentLoadSuccess} onLoadError={console.error}>
                         <Page height="600" pageNumber={pageNumber} />
                     </Document>
+                    <p>Page {pageNumber} of {numPages}</p>
+                    {pageNumber > 1 && (<button onClick={changePageBack}>Back</button>)}
+                    {pageNumber < numPages && (<button onClick={changePageNext}>Next</button>)}
                 </header>
             </div>
         </div>
