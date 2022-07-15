@@ -31,7 +31,7 @@ const HomePage = () => {
             <div>
                 <header>
                     <Document file={oneself} onLoadSuccess={onDocumentLoadSuccess} onLoadError={console.error}>
-                        <Page height="600" pageNumber={pageNumber} />
+                        <Page height="400" pageNumber={pageNumber} />
                     </Document>
                     <p>Page {pageNumber} of {numPages}</p>
                     {pageNumber > 1 && (<button onClick={changePageBack}>Back</button>)}
