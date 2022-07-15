@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack"
-import oneself from "../HomePage/Moore, Jon Resume.pdf"
+import oneself from "../HomePage/oneself.pdf"
+import resume from "../../../src/Moore, Jon Resume.pdf"
 
 
 const HomePage = () => {
@@ -29,14 +30,12 @@ const HomePage = () => {
         <div>
             <h1>J.L. Deleon Entertainment</h1>
             <div>
-                <header>
-                    <Document file={oneself} onLoadSuccess={onDocumentLoadSuccess} onLoadError={console.error}>
-                        <Page height="400" pageNumber={pageNumber} />
-                    </Document>
-                    <p>Page {pageNumber} of {numPages}</p>
-                    {pageNumber > 1 && (<button onClick={changePageBack}>Back</button>)}
-                    {pageNumber < numPages && (<button onClick={changePageNext}>Next</button>)}
-                </header>
+                <Document file="http://www.africau.edu/images/default/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page height="400" pageNumber={pageNumber} />
+                </Document>
+                <p>Page {pageNumber} of {numPages}</p>
+                {pageNumber > 1 && (<button onClick={changePageBack}>Back</button>)}
+                {pageNumber < numPages && (<button onClick={changePageNext}>Next</button>)}
             </div>
         </div>
     )
