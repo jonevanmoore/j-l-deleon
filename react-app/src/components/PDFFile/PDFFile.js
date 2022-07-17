@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack"
-import oneself from "../HomePage/oneself.pdf"
+import oneself from "../PDFFile/oneself.pdf"
 
 
 const PDFFile = () => {
@@ -26,7 +26,7 @@ const PDFFile = () => {
     return (
         <>
             <div className="pdf-container">
-                <Document file={oneself} onLoadSuccess={onDocumentLoadSuccess}>
+                <Document file={`${oneself}`} onLoadSuccess={onDocumentLoadSuccess}>
                     <Page height="400" pageNumber={pageNumber} />
                 </Document>
                 <p>Page {pageNumber} of {numPages}</p>
@@ -34,10 +34,12 @@ const PDFFile = () => {
                 {pageNumber < numPages && (<button onClick={changePageNext}>Next</button>)}
             </div>
 
-            <div className="test-container">
-                <embed src={oneself} type='application/pdf' width='100%' height='600px' />
+            {/* <div className="test-container">
+                <iframe id="example" src={`${oneself}`} width='100%' height='600px'></iframe>
+                <embed src={`${oneself}#page=5`} type='application/pdf' height='600px' />
 
-            </div>
+            </div> */}
+
         </>
     )
 }

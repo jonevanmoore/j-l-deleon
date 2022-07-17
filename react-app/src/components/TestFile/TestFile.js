@@ -7,16 +7,16 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 import { Worker } from "@react-pdf-viewer/core";
 
-import oneself from "../HomePage/oneself.pdf"
+// import oneself from "../HomePage/oneself.pdf"
 
 const TestFile = () => {
-    const [defaultPdfFile] = useState(oneself)
+    // const [defaultPdfFile] = useState(oneself)
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
     return (
         <>
             <Viewer
-                fileUrl={defaultPdfFile}
+                // fileUrl={defaultPdfFile}
                 plugins={[defaultLayoutPluginInstance]}
             />
         </>
