@@ -25,12 +25,19 @@ const PDFFile = () => {
     }
     return (
         <>
-            <Document file={oneself} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page height="400" pageNumber={pageNumber} />
-            </Document>
-            <p>Page {pageNumber} of {numPages}</p>
-            {pageNumber > 1 && (<button onClick={changePageBack}>Back</button>)}
-            {pageNumber < numPages && (<button onClick={changePageNext}>Next</button>)}
+            <div className="pdf-container">
+                <Document file={oneself} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page height="400" pageNumber={pageNumber} />
+                </Document>
+                <p>Page {pageNumber} of {numPages}</p>
+                {pageNumber > 1 && (<button onClick={changePageBack}>Back</button>)}
+                {pageNumber < numPages && (<button onClick={changePageNext}>Next</button>)}
+            </div>
+
+            <div className="test-container">
+                <embed src={oneself} type='application/pdf' width='100%' height='600px' />
+
+            </div>
         </>
     )
 }
