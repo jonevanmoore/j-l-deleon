@@ -34,11 +34,11 @@ const PDFFile = () => {
                 {pageNumber < numPages && (<button onClick={changePageNext}>Next</button>)}
             </div>
 
-            {/* <div className="test-container">
-                <iframe id="example" src={`${oneself}`} width='100%' height='600px'></iframe>
-                <embed src={`${oneself}#page=5`} type='application/pdf' height='600px' />
+            <div className="test-container">
+                <iframe id="example" src={`${oneself}`} width='50%' height='600px' scrolling="no" ></iframe>
+                <embed src={`${oneself}#page=5`} type='application/pdf' height='600px' scrolling='no' />
 
-            </div> */}
+            </div>
 
         </>
     )
